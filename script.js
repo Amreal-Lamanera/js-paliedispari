@@ -38,13 +38,17 @@ function invertArray(list) {
 function isPalindrome(list) {
     // creo un array identico, ma invertito
     const myArrayReverse = invertArray(list);
-    let palOk = true;
+    // let palOk = true;
     //confronto elementi dell'array 1 a 1
-    for (let i = 0; i < list.length; i++) {
-        if (list[i] !== myArrayReverse[i]) {
-            palOk = false;
-        }
-    }
+    // for (let i = 0; i < list.length; i++) {
+    //     if (list[i] !== myArrayReverse[i]) {
+    //         palOk = false;
+    //     }
+    // }
+    // return palOk;
 
-    return palOk;
+    // ALTERNATIVA
+
+    return myArrayReverse.join(',') === list.join(',')
+
 }
