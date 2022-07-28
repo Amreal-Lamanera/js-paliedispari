@@ -49,6 +49,6 @@ function isPalindrome(list) {
 
     // ALTERNATIVA
 
+    // Trasformo gli array in stringhe e controllo se sono uguali, ritorno il valore del confronto
     return myArrayReverse.join(',') === list.join(',')
-
 }
