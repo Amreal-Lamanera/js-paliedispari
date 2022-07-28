@@ -20,18 +20,42 @@
 
     <body class="bg-dark">
 
-        <h1 class="text-center text-primary">Pali o Dispari?</h1>
+        <h1 class="text-center text-primary pb-5">Pali o Dispari?</h1>
 
-        <div class="container-lg border border-white p-5">
+        <div class="container-lg border border-white p-5 mb-5">
             <h2 class="text-warning pb-3">Gioco dei Palindromi</h2>
-            <div class="form-area pb-4">
-                <span class="text-white me-4">Inserisci una parola:</span>
-                <input type="text" id="urWorld" class="me-5">
-                <span class="text-white me-4">Parola inversa:</span>
-                <input type="text" id="urWorldRev" disabled class="me-5">
+            <div class="form-area pb-4 d-flex justify-content-between">
+                <span class="text-white">Inserisci una parola:</span>
+                <input type="text" id="urWorld" class="">
+                <span class="text-white">Parola inversa:</span>
+                <input type="text" id="urWorldRev" disabled class="">
                 <input type="submit" value="Gioca" id="palSubBtn">
             </div>
-            <p id="result" class="text-danger"></p>
+            <p id="resultG1" class="text-danger"></p>
+        </div>
+
+        <div class="container-lg border border-white p-5">
+            <h2 class="text-warning pb-3">Pari o Dispari</h2>
+            <div class="form-area pb-4 d-flex justify-content-between">
+                <span class="text-white">Pari o Dispari?</span>
+                <!-- <input type="text" id="urWorld" class="me-5"> -->
+                <select id="evenOdd" class="">
+                    <option value="1">Pari</option>
+                    <option value="0">Dispari</option>
+                </select>
+                <span class="text-white">Numero:</span>
+                <select id="urNum" class="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <span class="text-white">Il mio numero casuale:</span>
+                <input type="text" id="myNum" disabled class="">
+                <input type="submit" value="Gioca" id="evOdGameBtn">
+            </div>
+            <p id="resultG2" class="text-danger"></p>
         </div>
 
 

@@ -9,22 +9,25 @@
 const urWordElement = document.getElementById("urWorld");
 // console.log(urWordElement);
 // Recupero dove stampare risultato dal DOM
-const resultElement = document.getElementById("result");
+const resultG1Element = document.getElementById("resultG1");
 
 // Recupero dove stampare la parola invertita dal DOM
 const urWorldRevElement = document.getElementById("urWorldRev");
-
-// Imposto valore di default a result
-let result = "Parola/frase non palindroma!";
 
 const palSubBtnElement = document.getElementById("palSubBtn");
 
 palSubBtnElement.addEventListener('click', palGame);
 
 function palGame() {
+
+    // Imposto valore di default a resultG1
+    let resultG1 = "Parola/frase non palindroma!";
+    resultG1Element.classList.remove('text-success');
+    resultG1Element.classList.add('text-danger');
+
     if (urWordElement.value === "") {
 
-        resultElement.innerHTML = "Non hai inserito una parola - ricarica la pagina per riprovare";
+        resultG1Element.innerHTML = "Non hai inserito una parola - ricarica la pagina per riprovare";
     } else {
         // creo un array di lettere dalla parola
         let myArray = urWordElement.value.split("");
@@ -55,55 +58,74 @@ function palGame() {
         });
 
         if (myArrayReverse.join('') === myArray.join('')) {
-            resultElement.classList.add('text-success');
-            resultElement.classList.remove('text-danger');
-            result = "Parola/frase palindroma!";
+            resultG1Element.classList.add('text-success');
+            resultG1Element.classList.remove('text-danger');
+            resultG1 = "Parola/frase palindroma!";
         }
 
-        resultElement.innerHTML = result;
+        resultG1Element.innerHTML = resultG1;
 
     }
 }
 
-if (0) {
-    /************************************************************************
-        TODO: GIOCO 2
-    ************************************************************************/
-    const evenOdd = prompt('Scegli "pari" o "dispari" scrivendolo qua sotto');
-    // console.log(evenOdd);
-    if (evenOdd !== "pari" && evenOdd !== "Pari" && evenOdd !== "dispari" && evenOdd !== "Dispari") {
-        console.warn("Scelta non valida - ricarica la pagina per riprovare");
-    } else {
-        // creo una variabile urChoice con valore false => corrisponderà alla scelta dispari
-        let urChoice = false;
-        if (evenOdd === "pari" || evenOdd === "Pari") {
-            // se la scelta è pari assegno a urChoice true
-            urChoice = true;
-        }
-        // utente sceglie un numero
-        const urNum = parseInt(prompt("Inserisci un numero fra 1 e 5"));
-        if (!isNaN(urNum)) {
-            if (urNum > 0 && urNum < 5) {
-                // genero un numero casuale per il pc
-                const myNum = getRandomIntBetween(1, 5);
-                console.log("IL TUO NUMERO: ", urNum, "IL MIO NUMERO: ", myNum);
-                const sum = myNum + urNum;
-                let result = "Hai perso!";
-                // Utilizzo uno XOR negato (vero se entrambe vere o entrambe false)
-                // => se è pari e hai scelto pari
-                // => se è dispari e hai scelto dispari
-                // con pari = true
-                if (!(isEven(sum) ^ urChoice)) {
-                    result = "Hai vinto!";
-                }
-                console.log(result);
-            }
-        } else {
-            console.warn("Numero inserito non corretto - ricarica la pagina per riprovare");
-        }
-    }
+/************************************************************************
+    TODO: GIOCO 2
+************************************************************************/
+// Recupero input pari o dispari
+const evenOddElement = document.getElementById("evenOdd");
 
+// Recupero input il tuo numero
+const urNumElement = document.getElementById("urNum");
+
+// console.log(urWordElement);
+// Recupero dove stampare risultato dal DOM
+const resultG2Element = document.getElementById("resultG2");
+
+// Recupero dove stampare il numero casuale
+const myNumElement = document.getElementById("myNum");
+
+const evOdGameBtnElement = document.getElementById("evOdGameBtn");
+// console.log(evOdGameBtnElement);
+
+evOdGameBtnElement.addEventListener('click', evOdGame);
+
+function evOdGame() {
+
+    // Imposto valore di default a resultG2
+    let resultG2 = "Hai perso!";
+    resultG2Element.classList.remove('text-success');
+    resultG2Element.classList.add('text-danger');
+
+    // creo una variabile urChoice con valore false => corrisponderà alla scelta dispari
+    let urChoice = parseInt(evenOddElement.value);
+
+    // utente sceglie un numero
+    const urNum = parseInt(urNumElement.value);
+
+    // genero un numero casuale per il pc
+    const myNum = getRandomIntBetween(1, 5);
+    // lo metto nel DOM
+    myNumElement.value = myNum;
+
+    // sommo i due numeri
+    const sum = myNum + urNum;
+    // console.log(sum);
+    // console.log(isEven(sum));
+    // console.log(urChoice);
+    // console.log(!(isEven(sum) ^ urChoice));
+
+    // Utilizzo uno XOR negato (vero se entrambe vere o entrambe false)
+    // => se è pari e hai scelto pari
+    // => se è dispari e hai scelto dispari
+    // con pari = true
+    if (!(isEven(sum) ^ urChoice)) {
+        resultG2Element.classList.add('text-success');
+        resultG2Element.classList.remove('text-danger');
+        resultG2 = "Hai vinto!";
+    }
+    resultG2Element.innerHTML = resultG2;
 }
+
 
 /*************************************************************
     FUNCTIONS
