@@ -27,7 +27,7 @@ function palGame() {
 
     if (urWordElement.value === "") {
 
-        resultG1Element.innerHTML = "Non hai inserito una parola - ricarica la pagina per riprovare";
+        resultG1Element.innerHTML = "Non hai inserito una parola";
     } else {
         // creo un array di lettere dalla parola
         let myArray = urWordElement.value.split("");
