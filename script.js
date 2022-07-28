@@ -40,8 +40,10 @@ if (wichGame === 1) {
     if (evenOdd !== "pari" && evenOdd !== "Pari" && evenOdd !== "dispari" && evenOdd !== "Dispari") {
         console.warn("Scelta non valida - ricarica la pagina per riprovare");
     } else {
+        // creo una variabile urChoice con valore false => corrisponderà alla scelta dispari
         let urChoice = false;
         if (evenOdd === "pari" || evenOdd === "Pari") {
+            // se la scelta è pari assegno a urChoice true
             urChoice = true;
         }
         // utente sceglie un numero
