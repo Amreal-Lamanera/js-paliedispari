@@ -73,9 +73,9 @@ if (wichGame === 1) {
     alert("Valore non corretto - ricarica la pagina per riprovare")
 }
 
-/***********************
+/*************************************************************
     FUNCTIONS
-***********************/
+*************************************************************/
 
 // funzione per invertire un array
 function invertArray(list) {
