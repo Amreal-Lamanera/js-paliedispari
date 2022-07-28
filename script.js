@@ -3,6 +3,7 @@ const wichGame = parseInt(prompt("Inserisci 1 per il gioco sulle parole palindro
 
 if (wichGame === 1) {
 
+    //TODO: GIOCO 1
     // chiedo all'utente una parola
     const urWord = prompt("Inserisci una parola o una frase palindroma");
     let result = "Parola/frase non palindroma!"
@@ -29,6 +30,7 @@ if (wichGame === 1) {
     }
 } else if (wichGame === 2) {
 
+    //TODO: GIOCO 2
     const evenOdd = prompt('Scegli "pari" o "dispari" scrivendolo qua sotto');
     // console.log(evenOdd);
     if (evenOdd !== "pari" && evenOdd !== "Pari" && evenOdd !== "dispari" && evenOdd !== "Dispari") {
