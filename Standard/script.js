@@ -35,14 +35,14 @@ if (wichGame === 1) {
     /************************************************************************
         TODO: GIOCO 2
     ************************************************************************/
-    const evenOdd = prompt('Scegli "pari" o "dispari" scrivendolo qua sotto');
+    const evenOdd = prompt('Scegli "pari" o "dispari" scrivendolo qua sotto').toUpperCase();
     // console.log(evenOdd);
-    if (evenOdd !== "pari" && evenOdd !== "Pari" && evenOdd !== "dispari" && evenOdd !== "Dispari") {
+    if (evenOdd !== "PARI" && evenOdd !== "DISPASRI") {
         console.warn("Scelta non valida - ricarica la pagina per riprovare");
     } else {
         // creo una variabile urChoice con valore false => corrisponderà alla scelta dispari
         let urChoice = false;
-        if (evenOdd === "pari" || evenOdd === "Pari") {
+        if (evenOdd === "PARI") {
             // se la scelta è pari assegno a urChoice true
             urChoice = true;
         }
