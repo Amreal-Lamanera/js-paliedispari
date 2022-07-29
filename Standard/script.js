@@ -35,7 +35,10 @@ if (wichGame === 1) {
     /************************************************************************
         TODO: GIOCO 2
     ************************************************************************/
-    const evenOdd = prompt('Scegli "pari" o "dispari" scrivendolo qua sotto').toUpperCase();
+
+    //.toUpperCase() -> trasformo la stringa tutta maiuscola
+    //.trim()    -> rimuovo eventuali spazi all'inizio o alla fine della stringa
+    const evenOdd = prompt('Scegli "pari" o "dispari" scrivendolo qua sotto').toUpperCase().trim();
     // console.log(evenOdd);
     if (evenOdd !== "PARI" && evenOdd !== "DISPASRI") {
         console.warn("Scelta non valida - ricarica la pagina per riprovare");
