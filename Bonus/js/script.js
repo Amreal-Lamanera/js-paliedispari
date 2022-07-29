@@ -30,7 +30,7 @@ function palGame() {
         resultG1Element.innerHTML = "Non hai inserito una parola";
     } else {
         // creo un array di lettere dalla parola
-        let myArray = urWordElement.value.split("");
+        let myArray = urWordElement.value.toUpperCase().split("");
 
         // rimuovo gli spazi (se presenti)
         myArray = myArray.filter(element => {
@@ -45,7 +45,7 @@ function palGame() {
 
         // ALTERNATIVA - SENZA FUNZIONI
         // creo un array di lettere dalla parola
-        let myArrayReverse = urWordElement.value.split("").reverse();
+        let myArrayReverse = urWordElement.value.toUpperCase().split("").reverse();
         // console.log(myArrayReverse);
         // console.log(myArrayReverse.join(''));
 

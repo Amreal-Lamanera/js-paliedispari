@@ -7,7 +7,7 @@ if (wichGame === 1) {
         TODO: GIOCO 1
     ************************************************************************/
     // chiedo all'utente una parola
-    const urWord = prompt("Inserisci una parola o una frase palindroma");
+    const urWord = prompt("Inserisci una parola o una frase palindroma").toUpperCase();
     let result = "Parola/frase non palindroma!"
 
     if (urWord === null) {
@@ -102,7 +102,7 @@ function isPalindrome(list) {
     // ALTERNATIVA
 
     // Trasformo gli array in stringhe e controllo se sono uguali, ritorno il valore del confronto
-    return myArrayReverse.join(',') === list.join(',')
+    return myArrayReverse.join('') === list.join('')
 }
 
 // funzione che genera un numero casuale da min a max
