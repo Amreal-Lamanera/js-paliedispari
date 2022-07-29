@@ -49,7 +49,7 @@ if (wichGame === 1) {
         // utente sceglie un numero
         const urNum = parseInt(prompt("Inserisci un numero fra 1 e 5"));
         if (!isNaN(urNum)) {
-            if (urNum > 0 && urNum < 5) {
+            if (urNum > 0 && urNum < 6) {
                 // genero un numero casuale per il pc
                 const myNum = getRandomIntBetween(1, 5);
                 console.log("IL TUO NUMERO: ", urNum, "IL MIO NUMERO: ", myNum);
@@ -63,6 +63,8 @@ if (wichGame === 1) {
                     result = "Hai vinto!";
                 }
                 console.log(result);
+            } else {
+                console.warn("Numero inserito non corretto - ricarica la pagina per riprovare");
             }
         } else {
             console.warn("Numero inserito non corretto - ricarica la pagina per riprovare");
