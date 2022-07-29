@@ -79,10 +79,10 @@ if (wichGame === 1) {
 
 // funzione per invertire un array
 function invertArray(list) {
-    const newArray = [];
-    for (let i = list.length - 1; i >= 0; i--) {
-        newArray.push(list[i]);
-    }
+    const newArray = list.reverse();
+    // for (let i = list.length - 1; i >= 0; i--) {
+    //     newArray.push(list[i]);
+    // }
     return newArray
 }
 
